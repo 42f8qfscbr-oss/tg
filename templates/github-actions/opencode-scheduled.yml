@@ -1,0 +1,29 @@
+name: opencode-scheduled
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+
+jobs:
+  opencode:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: anomalyco/opencode/github@latest
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: deepseek/DeepSeek-V4-Pro
+          use_github_token: true
+          prompt: |
+            Review the repository for stale TODOs, failing documentation examples, dependency upgrade opportunities, and simple maintenance issues.
+            If there is a clear low-risk fix, open a pull request. Otherwise, create or update an issue with the findings.

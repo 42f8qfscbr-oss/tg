@@ -1,0 +1,31 @@
+name: opencode-dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: OpenCode task prompt
+        required: true
+        type: string
+
+jobs:
+  opencode:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: anomalyco/opencode/github@latest
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: deepseek/DeepSeek-V4-Pro
+          use_github_token: true
+          prompt: ${{ inputs.prompt }}
