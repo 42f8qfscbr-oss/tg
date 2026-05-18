@@ -1,0 +1,98 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hermes: Start Controller",
+      "type": "shell",
+      "command": "./scripts/linux/start-hermes.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Hermes: Verify Environment",
+      "type": "shell",
+      "command": "./scripts/linux/check-env.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Python: Create Task Project",
+      "type": "shell",
+      "command": "read -p 'Project name: ' name && ./scripts/linux/new-python-task-project.sh \"$name\"",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Python: Validate Current Project",
+      "type": "shell",
+      "command": "./scripts/linux/python-validate.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Skills: Add Matt Pocock Skills Interactive",
+      "type": "shell",
+      "command": "npx skills@latest add mattpocock/skills",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Skills: List Matt Pocock Skills",
+      "type": "shell",
+      "command": "npx skills@latest add mattpocock/skills --list",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "VS Code: Open Current WSL Workspace",
+      "type": "shell",
+      "command": "code .",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
