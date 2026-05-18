@@ -28,7 +28,7 @@
   },
 
   "shell": "pwsh",
-  "share": "disabled",
+  "share": "manual",
   "autoupdate": "notify",
 
   "permission": {
