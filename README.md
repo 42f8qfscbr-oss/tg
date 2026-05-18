@@ -63,6 +63,13 @@ Hermes is the local controller. Use it to plan, split tasks, and report strategy
 .\scripts\start-hermes.ps1
 ```
 
+On WSL2 Ubuntu:
+
+```bash
+cd ~/codex/Coding-framework
+./scripts/linux/start-hermes.sh
+```
+
 Recommended first prompt:
 
 ```text
@@ -91,6 +98,14 @@ Create one independent Python project folder per task:
 .\scripts\new-python-task-project.ps1 -Name task-a
 .\scripts\new-python-task-project.ps1 -Name task-b
 .\scripts\new-python-task-project.ps1 -Name task-c
+```
+
+On WSL2 Ubuntu:
+
+```bash
+./scripts/linux/new-python-task-project.sh task-a
+./scripts/linux/new-python-task-project.sh task-b
+./scripts/linux/new-python-task-project.sh task-c
 ```
 
 Start one OpenCode session per folder:

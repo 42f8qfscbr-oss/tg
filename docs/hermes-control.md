@@ -18,6 +18,12 @@ Hermes is the local controller for this workspace. GitHub is not the development
 .\scripts\start-hermes.ps1
 ```
 
+On WSL2 Ubuntu:
+
+```bash
+./scripts/linux/start-hermes.sh
+```
+
 2. Ask Hermes for a plan:
 
 ```text
@@ -33,6 +39,13 @@ Use Hermes. I want to build <goal>. Research open source inspiration if useful, 
 .\scripts\new-python-task-project.ps1 -Name task-b
 ```
 
+On WSL2 Ubuntu:
+
+```bash
+./scripts/linux/new-python-task-project.sh task-a
+./scripts/linux/new-python-task-project.sh task-b
+```
+
 5. Start one local OpenCode session per task folder:
 
 ```powershell
@@ -46,6 +59,12 @@ opencode
 
 ```powershell
 .\scripts\python-validate.ps1
+```
+
+On WSL2 Ubuntu:
+
+```bash
+./scripts/linux/python-validate.sh
 ```
 
 8. Hermes reviews results and decides whether to push to GitHub.

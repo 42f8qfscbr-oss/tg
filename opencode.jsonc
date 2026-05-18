@@ -27,7 +27,7 @@
     }
   },
 
-  "shell": "pwsh",
+  "shell": "bash",
   "share": "manual",
   "autoupdate": "notify",
 
