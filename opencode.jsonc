@@ -20,8 +20,25 @@
     "AGENTS.md",
     "docs/architecture.md",
     "docs/coding-rules.md",
-    "docs/workflow.md"
+    "docs/workflow.md",
+    "docs/github-integration.md"
   ],
+
+  "mcp": {
+    // Search public GitHub code snippets for implementation examples.
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    },
+
+    // Fetch current library/framework docs. Add CONTEXT7_API_KEY later if you need higher rate limits.
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    }
+  },
 
   "compaction": {
     "auto": true,

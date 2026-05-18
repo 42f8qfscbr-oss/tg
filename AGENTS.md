@@ -24,6 +24,15 @@ Follow this sequence for every non-trivial task:
 - Add focused tests for core behavior, edge cases, and regressions.
 - Treat generated code as production code: readable, maintainable, and reviewable.
 
+## Open Source Research Rules
+
+- When unsure how a library, framework, or API should be used, search official docs first with `context7`.
+- When implementation examples are useful, use `gh_grep` to search public GitHub code snippets.
+- Use GitHub examples as references, not as blind copy-paste sources.
+- Check license compatibility before copying meaningful code from an open source project.
+- Prefer adding mature package dependencies over vendoring code, unless the task explicitly requires vendoring.
+- Never paste secrets, private repository content, or proprietary code into public GitHub searches.
+
 ## Question Rules
 
 Ask the user before proceeding when:
