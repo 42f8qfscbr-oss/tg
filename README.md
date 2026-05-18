@@ -48,12 +48,28 @@ Check status:
 .\scripts\github-check.ps1
 ```
 
-Open source research inside OpenCode can use:
+Open source research inside local OpenCode can use:
 
 - `context7` for current official docs.
 - `gh_grep` for public GitHub code examples.
 
 See `docs/github-integration.md`.
+
+## Hermes Control
+
+Hermes is the local controller. Use it to plan, split tasks, and report strategy before execution:
+
+```powershell
+.\scripts\start-hermes.ps1
+```
+
+Recommended first prompt:
+
+```text
+Use Hermes. I want to build <goal>. Use GitHub only for open source inspiration. First report plan, task split, risks, and questions. Do not execute until I approve.
+```
+
+See `docs/hermes-control.md`.
 
 ## Python Parallel Development
 

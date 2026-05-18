@@ -1,15 +1,17 @@
 # AGENTS.md
 
-This repository is prepared as an automated programming workspace driven by OpenCode.
+This repository is prepared as a local automated programming workspace driven by OpenCode.
+
+Hermes is the controller. GitHub is not the primary development executor.
 
 ## Operating Rules
 
 Follow this sequence for every non-trivial task:
 
 1. Read the user brief, repository structure, README, tests, and relevant docs.
-2. Identify ambiguity. Stop for confirmation only when the answer changes architecture, data contracts, security, payment, permissions, or destructive operations.
-3. For minor ambiguity, make a conservative assumption and record it in the final response.
-4. Implement within the smallest reasonable scope.
+2. For architecture, task split, dependencies, data contracts, security, payment, permissions, or destructive operations, Hermes must report the plan and ask for approval before execution.
+3. For minor ambiguity, make a conservative assumption and record it.
+4. After approval, implement within the smallest reasonable scope.
 5. Run formatting, lint, type checks, tests, and build when the project provides those commands.
 6. Fix failures caused by the change.
 7. Report changed files, validation results, assumptions, and remaining risks.
@@ -32,6 +34,15 @@ Follow this sequence for every non-trivial task:
 - Check license compatibility before copying meaningful code from an open source project.
 - Prefer adding mature package dependencies over vendoring code, unless the task explicitly requires vendoring.
 - Never paste secrets, private repository content, or proprietary code into public GitHub searches.
+
+## Hermes Control Rules
+
+- Use Hermes for local planning, strategy, and task orchestration.
+- Hermes reports plan, task folders, risks, and questions to the user before execution.
+- One independent folder under `projects/` should represent one unrelated development task.
+- Use DeepSeek V4 Pro locally through OpenCode for coding work.
+- Use GitHub for open source inspiration, dependency research, repository backup, and pull requests only.
+- Do not rely on GitHub Actions `/opencode` as the primary development path.
 
 ## Question Rules
 

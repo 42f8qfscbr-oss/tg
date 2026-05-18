@@ -42,6 +42,7 @@
     "docs/architecture.md",
     "docs/coding-rules.md",
     "docs/workflow.md",
+    "docs/hermes-control.md",
     "docs/github-integration.md",
     "docs/python-workflow.md",
     "docs/local-deepseek-v4.md"
