@@ -1,0 +1,85 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // After running /connect -> deepseek, verify the exact model id with /models.
+  // If OpenCode shows a different id for DeepSeek V4 Pro, replace this value.
+  "model": "deepseek/DeepSeek-V4-Pro",
+  "small_model": "deepseek/DeepSeek-V4-Pro",
+
+  "provider": {
+    // Local DeepSeek-V4-Pro served by vLLM/SGLang as an OpenAI-compatible API.
+    // Start the server first, then run:
+    //   opencode -m local-deepseek-v4/deepseek-ai/DeepSeek-V4-Pro
+    "local-deepseek-v4": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local DeepSeek V4",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "{env:LOCAL_DEEPSEEK_API_KEY}",
+        "timeout": 900000,
+        "chunkTimeout": 120000
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek V4 Pro local"
+        }
+      }
+    }
+  },
+
+  "shell": "pwsh",
+  "share": "disabled",
+  "autoupdate": "notify",
+
+  "permission": {
+    "edit": "ask",
+    "bash": "ask",
+    "external_directory": "ask"
+  },
+
+  "instructions": [
+    "AGENTS.md",
+    "docs/architecture.md",
+    "docs/coding-rules.md",
+    "docs/workflow.md",
+    "docs/github-integration.md",
+    "docs/python-workflow.md",
+    "docs/local-deepseek-v4.md"
+  ],
+
+  "mcp": {
+    // Search public GitHub code snippets for implementation examples.
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    },
+
+    // Fetch current library/framework docs. Add CONTEXT7_API_KEY later if you need higher rate limits.
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    }
+  },
+
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+
+  "watcher": {
+    "ignore": [
+      ".git/**",
+      ".opencode/sessions/**",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      "coverage/**",
+      ".venv/**",
+      "__pycache__/**"
+    ]
+  }
+}
