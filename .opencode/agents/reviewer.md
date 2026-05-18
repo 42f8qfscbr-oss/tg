@@ -1,6 +1,7 @@
 ---
 description: Reviews branch changes for bugs, security issues, edge cases, missing tests, and architecture drift
 mode: subagent
+model: deepseek/deepseek-v4-pro
 temperature: 0.1
 permission:
   edit: deny

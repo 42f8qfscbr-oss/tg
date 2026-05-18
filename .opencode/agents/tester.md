@@ -1,6 +1,7 @@
 ---
 description: Runs validation, investigates failures, and proposes or implements minimal fixes when assigned
 mode: subagent
+model: deepseek/deepseek-v4-pro
 temperature: 0.1
 permission:
   edit: ask

@@ -41,6 +41,8 @@ Follow this sequence for every non-trivial task:
 - Hermes reports plan, task folders, risks, and questions to the user before execution.
 - One independent folder under `projects/` should represent one unrelated development task.
 - Use DeepSeek V4 Pro locally through OpenCode for coding work.
+- Use DeepSeek V4 Flash for simple non-coding operations such as downloads, installs, status checks, routine command execution, and short replies.
+- Escalate from DeepSeek V4 Flash to DeepSeek V4 Pro whenever the task involves code changes, architecture, non-trivial debugging, review, security, or dependency/API decisions.
 - Use GitHub for open source inspiration, dependency research, repository backup, and pull requests only.
 - Do not rely on GitHub Actions `/opencode` as the primary development path.
 

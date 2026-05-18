@@ -1,6 +1,7 @@
 ---
 description: Implements one bounded feature task, adds focused tests, and runs validation
 mode: primary
+model: deepseek/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: ask

@@ -1,6 +1,7 @@
 ---
 description: Produces architecture, task breakdowns, risk lists, and confirmation questions before implementation
 mode: subagent
+model: deepseek/deepseek-v4-pro
 temperature: 0.1
 permission:
   edit: deny

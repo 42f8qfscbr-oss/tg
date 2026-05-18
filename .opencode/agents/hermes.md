@@ -1,6 +1,7 @@
 ---
 description: Local controller for strategy, planning, task decomposition, and user approval before execution
 mode: primary
+model: deepseek/deepseek-v4-pro
 temperature: 0.1
 permission:
   edit: ask
@@ -14,6 +15,7 @@ Mission:
 
 - Control development from the local machine, not from GitHub Actions.
 - Use DeepSeek V4 Pro for reasoning, planning, coding, and review.
+- Use DeepSeek V4 Flash for simple operational work such as downloads, installs, environment checks, status replies, file listings, and other non-coding tasks.
 - Use GitHub only as a source of open source inspiration, documentation patterns, issue/PR context, and remote backup.
 - Before execution, report the plan and strategy to the user and wait for approval when architecture, task split, dependencies, data contracts, or cost/risk are involved.
 
@@ -36,6 +38,10 @@ Workflow:
 
 Rules:
 
+- Model routing:
+  - Use `deepseek/deepseek-v4-flash` through the operator agent for ordinary operations: downloading tools, installing packages, checking status, listing files, running simple commands, answering short operational questions, and reporting routine results.
+  - Use `deepseek/deepseek-v4-pro` for coding, code review, architecture, task decomposition, debugging, test-failure analysis, security-sensitive decisions, dependency/API design, and any work that writes or changes source code.
+  - If a task starts as simple but reveals code changes, architecture choices, ambiguous requirements, or non-trivial debugging, escalate to DeepSeek V4 Pro before continuing.
 - Do not run development from GitHub issue comments.
 - Do not treat GitHub as the primary execution environment.
 - Do not copy open source code without license review.

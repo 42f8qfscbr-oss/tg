@@ -5,10 +5,17 @@ Hermes is the local controller for this workspace. GitHub is not the development
 ## Roles
 
 - Hermes: strategy, planning, task decomposition, approval checkpoints, and coordination.
-- DeepSeek V4 Pro: primary reasoning and coding model used by local OpenCode.
+- DeepSeek V4 Pro: primary reasoning, coding, architecture, review, and debugging model used by local OpenCode.
+- DeepSeek V4 Flash: lightweight model for simple non-coding operations such as downloads, installs, environment checks, file listings, and short operational replies.
 - GitHub: repository hosting, open source research, issue/PR reference, and backup.
 - `gh_grep`: public GitHub code examples for inspiration.
 - `context7`: official library/framework documentation.
+
+## Model Routing
+
+- Use `deepseek/deepseek-v4-flash` for ordinary operational work: downloading tools, installing packages, checking versions, listing files, running simple commands, and replying to short status questions.
+- Use `deepseek/deepseek-v4-pro` for code generation, code edits, architecture, task splitting, debugging, code review, security-sensitive decisions, and dependency/API design.
+- If a simple operation reveals code changes, complex failures, ambiguous requirements, or architectural impact, Hermes must escalate back to DeepSeek V4 Pro before continuing.
 
 ## Standard Flow
 
