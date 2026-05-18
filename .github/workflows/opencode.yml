@@ -31,7 +31,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: deepseek/DeepSeek-V4-Pro
-          agent: builder
+          agent: github-builder
+          share: true
           use_github_token: true
           prompt: |
             Follow AGENTS.md and the repository docs.
