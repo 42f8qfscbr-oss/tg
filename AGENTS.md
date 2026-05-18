@@ -2,7 +2,15 @@
 
 This repository is prepared as a local automated programming workspace driven by OpenCode.
 
-Hermes is the controller. GitHub is not the primary development executor.
+Hermes is the controller. GitHub is not the primary development executor. WSL2 Ubuntu 24.04 is the primary development environment; Windows is only a launcher and file bridge.
+
+## Execution Environment Rules
+
+- Do all development, dependency installation, validation, Git work, and OpenCode sessions inside WSL2 Ubuntu 24.04.
+- Use ~/codex/Coding-framework as the canonical workspace.
+- Do not edit or develop from the Windows copy of the repository unless the user explicitly asks for Windows-specific maintenance.
+- Treat Windows paths such as D:\CodexCoding\Coding框架 as bootstrap or bridge paths, not the active development source.
+- Keep project folders under the WSL workspace projects/.
 
 ## Operating Rules
 

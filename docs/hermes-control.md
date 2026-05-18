@@ -1,6 +1,6 @@
 # Hermes Local Control Workflow
 
-Hermes is the local controller for this workspace. GitHub is not the development executor.
+Hermes is the local controller for this workspace. GitHub is not the development executor. WSL2 Ubuntu 24.04 is the primary development environment; Windows is only a launcher and file bridge.
 
 ## Roles
 
@@ -17,18 +17,25 @@ Hermes is the local controller for this workspace. GitHub is not the development
 - Use `deepseek/deepseek-v4-pro` for code generation, code edits, architecture, task splitting, debugging, code review, security-sensitive decisions, and dependency/API design.
 - If a simple operation reveals code changes, complex failures, ambiguous requirements, or architectural impact, Hermes must escalate back to DeepSeek V4 Pro before continuing.
 
+## Environment Policy
+
+- Run development, dependency installation, validation, Git commands, and OpenCode sessions inside WSL2 Ubuntu 24.04.
+- Use ~/codex/Coding-framework as the canonical workspace.
+- Do not develop from the Windows repository path unless the user explicitly asks for Windows-specific maintenance.
+
 ## Standard Flow
 
-1. Start Hermes locally:
+1. Start Hermes in WSL2 Ubuntu:
+
+```bash
+cd ~/codex/Coding-framework
+./scripts/linux/start-hermes.sh
+```
+
+Use the Windows PowerShell launcher only for bootstrap or Windows-specific maintenance:
 
 ```powershell
 .\scripts\start-hermes.ps1
-```
-
-On WSL2 Ubuntu:
-
-```bash
-./scripts/linux/start-hermes.sh
 ```
 
 2. Ask Hermes for a plan:
@@ -39,24 +46,19 @@ Use Hermes. I want to build <goal>. Research open source inspiration if useful, 
 
 3. Review Hermes' plan and approve or revise.
 
-4. Create independent task folders:
-
-```powershell
-.\scripts\new-python-task-project.ps1 -Name task-a
-.\scripts\new-python-task-project.ps1 -Name task-b
-```
-
-On WSL2 Ubuntu:
+4. Create independent task folders in WSL2 Ubuntu:
 
 ```bash
 ./scripts/linux/new-python-task-project.sh task-a
 ./scripts/linux/new-python-task-project.sh task-b
 ```
 
-5. Start one local OpenCode session per task folder:
+Use the Windows PowerShell project script only for Windows-specific maintenance.
 
-```powershell
-cd projects\task-a
+5. Start one local OpenCode session per task folder in WSL2 Ubuntu:
+
+```bash
+cd ~/codex/Coding-framework/projects/task-a
 opencode
 ```
 

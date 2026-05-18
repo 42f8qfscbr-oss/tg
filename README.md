@@ -2,11 +2,14 @@
 
 This directory contains a reusable OpenCode setup for DeepSeek V4 Pro based automated programming.
 
+WSL2 Ubuntu 24.04 is the primary development environment. Use ~/codex/Coding-framework as the canonical workspace; Windows is only a launcher and file bridge unless Windows-specific maintenance is explicitly required.
+
 ## First-Time Setup
 
-Open this directory in PowerShell and run:
+Open the WSL2 Ubuntu workspace and run:
 
-```powershell
+```bash
+cd ~/codex/Coding-framework
 opencode
 ```
 
@@ -26,11 +29,14 @@ Select `DeepSeek-V4-Pro`. If the displayed model id differs from `deepseek/deeps
 
 Detailed connection notes are in `docs/deepseek-setup.md`.
 
-To check the local setup:
+To check the WSL2 Ubuntu setup:
 
-```powershell
-.\scripts\check-opencode-env.ps1
+```bash
+cd ~/codex/Coding-framework
+./scripts/linux/check-env.sh
 ```
+
+Use Windows PowerShell checks only for Windows-specific maintenance.
 
 ## GitHub Setup
 
@@ -57,13 +63,7 @@ See `docs/github-integration.md`.
 
 ## Hermes Control
 
-Hermes is the local controller. Use it to plan, split tasks, and report strategy before execution:
-
-```powershell
-.\scripts\start-hermes.ps1
-```
-
-On WSL2 Ubuntu:
+Hermes is the local controller. Run it from WSL2 Ubuntu to plan, split tasks, and report strategy before execution:
 
 ```bash
 cd ~/codex/Coding-framework
