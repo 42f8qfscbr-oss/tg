@@ -12,6 +12,7 @@ jobs:
       contains(github.event.comment.body, '/oc') ||
       contains(github.event.comment.body, '/opencode')
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       id-token: write
       contents: write
@@ -40,4 +41,6 @@ jobs:
             Use GitHub issue or PR context as the source task.
             Use context7 for official docs and gh_grep for public GitHub examples when useful.
             Do not copy license-incompatible open source code.
-            Implement the requested change in a focused branch, add tests where appropriate, run validation, and open or update a pull request.
+            If the comment asks to inspect, check, review, plan, or confirm configuration, do not edit files. Reply with a concise diagnosis and next steps.
+            Only implement code when the comment explicitly asks to create, implement, fix, or modify something.
+            When implementation is requested, keep changes focused, add tests where appropriate, run validation, and open or update a pull request.
