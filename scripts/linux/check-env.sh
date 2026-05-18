@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/../.."
 
-export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 
 for cmd in git python3 node npm gh uv opencode; do
   if command -v "$cmd" >/dev/null 2>&1; then

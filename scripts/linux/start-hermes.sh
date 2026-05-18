@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/../.."
 
-export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 
 if ! command -v opencode >/dev/null 2>&1; then
   echo "opencode is not installed. Run: npm install -g opencode-ai" >&2
