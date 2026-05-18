@@ -1,0 +1,3 @@
+display_name: AI Parallel Coding Bootstrap
+short_description: Bootstrap WSL/Ubuntu Hermes/OpenCode parallel coding environments.
+default_prompt: Bootstrap this Ubuntu or WSL2 machine for Hermes/OpenCode/DeepSeek AI parallel coding. Verify tools, clone the framework, configure credentials safely, and report the final command to start Hermes.
