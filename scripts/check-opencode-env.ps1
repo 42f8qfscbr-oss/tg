@@ -14,6 +14,7 @@ function Test-Command($Name) {
 Test-Command "node"
 Test-Command "git"
 Test-Command "gh"
+Test-Command "uv"
 Test-Command "opencode"
 
 $requiredFiles = @(
@@ -24,6 +25,8 @@ $requiredFiles = @(
   "docs/workflow.md",
   "docs/deepseek-setup.md",
   "docs/github-integration.md",
+  "docs/python-workflow.md",
+  "docs/local-deepseek-v4.md",
   ".opencode/agents/architect.md",
   ".opencode/agents/builder.md",
   ".opencode/agents/reviewer.md",
@@ -36,6 +39,18 @@ $requiredFiles = @(
   "scripts/github-check.ps1",
   "scripts/github-search-code.ps1",
   "scripts/github-clone-reference.ps1",
+  "scripts/python-bootstrap.ps1",
+  "scripts/python-validate.ps1",
+  "scripts/new-python-worktree.ps1",
+  "scripts/new-python-task-project.ps1",
+  "scripts/start-task-project.ps1",
+  "scripts/check-gpu.ps1",
+  "scripts/check-local-deepseek.ps1",
+  "scripts/start-opencode-local-deepseek.ps1",
+  "templates/python-project/pyproject.toml",
+  "templates/python-project/src/task_project/__init__.py",
+  "templates/python-project/tests/test_smoke.py",
+  "templates/task-dispatch.md",
   "templates/github-actions/opencode-review.yml",
   "templates/github-actions/opencode-dispatch.yml",
   "templates/github-actions/opencode-scheduled.yml"

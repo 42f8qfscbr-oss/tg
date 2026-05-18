@@ -12,3 +12,9 @@ __pycache__/
 .env.*
 !.env.example
 external_repos/
+projects/*
+!projects/.gitkeep
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+uv.lock

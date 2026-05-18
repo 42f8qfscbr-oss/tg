@@ -55,6 +55,57 @@ Open source research inside OpenCode can use:
 
 See `docs/github-integration.md`.
 
+## Python Parallel Development
+
+Bootstrap the Python environment:
+
+```powershell
+.\scripts\python-bootstrap.ps1
+```
+
+Create a Python feature worktree:
+
+```powershell
+.\scripts\new-python-worktree.ps1 -Branch feature/example -Path ..\example-worktree -Base main
+```
+
+Create one independent Python project folder per task:
+
+```powershell
+.\scripts\new-python-task-project.ps1 -Name task-a
+.\scripts\new-python-task-project.ps1 -Name task-b
+.\scripts\new-python-task-project.ps1 -Name task-c
+```
+
+Start one OpenCode session per folder:
+
+```powershell
+cd projects\task-a
+opencode
+```
+
+Validate:
+
+```powershell
+.\scripts\python-validate.ps1
+```
+
+## Local DeepSeek V4 Pro
+
+The default OpenCode model remains the DeepSeek cloud provider. A local OpenAI-compatible provider is also configured:
+
+```text
+local-deepseek-v4/deepseek-ai/DeepSeek-V4-Pro
+```
+
+Start a vLLM or SGLang server first, then run:
+
+```powershell
+.\scripts\start-opencode-local-deepseek.ps1
+```
+
+See `docs/local-deepseek-v4.md`.
+
 ## Daily Flow
 
 1. Create a task brief from `templates/task-brief.md`.

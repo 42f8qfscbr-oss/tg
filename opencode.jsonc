@@ -6,6 +6,27 @@
   "model": "deepseek/DeepSeek-V4-Pro",
   "small_model": "deepseek/DeepSeek-V4-Pro",
 
+  "provider": {
+    // Local DeepSeek-V4-Pro served by vLLM/SGLang as an OpenAI-compatible API.
+    // Start the server first, then run:
+    //   opencode -m local-deepseek-v4/deepseek-ai/DeepSeek-V4-Pro
+    "local-deepseek-v4": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local DeepSeek V4",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "{env:LOCAL_DEEPSEEK_API_KEY}",
+        "timeout": 900000,
+        "chunkTimeout": 120000
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek V4 Pro local"
+        }
+      }
+    }
+  },
+
   "shell": "pwsh",
   "share": "disabled",
   "autoupdate": "notify",
@@ -21,7 +42,9 @@
     "docs/architecture.md",
     "docs/coding-rules.md",
     "docs/workflow.md",
-    "docs/github-integration.md"
+    "docs/github-integration.md",
+    "docs/python-workflow.md",
+    "docs/local-deepseek-v4.md"
   ],
 
   "mcp": {
