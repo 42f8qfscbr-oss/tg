@@ -1,0 +1,13 @@
+.opencode/sessions/
+node_modules/
+dist/
+build/
+.next/
+coverage/
+.venv/
+__pycache__/
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
