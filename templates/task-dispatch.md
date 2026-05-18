@@ -6,7 +6,7 @@
 
 ## OpenCode Model
 
-Default: `deepseek/DeepSeek-V4-Pro`
+Default: `deepseek/deepseek-v4-pro`
 
 Local option after vLLM/SGLang server is running:
 

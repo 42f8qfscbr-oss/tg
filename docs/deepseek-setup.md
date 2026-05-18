@@ -24,10 +24,10 @@ Choose `deepseek`, paste your DeepSeek API key, then run:
 
 Choose `DeepSeek-V4-Pro`.
 
-If OpenCode displays a model id different from `deepseek/DeepSeek-V4-Pro`, update this field in `opencode.jsonc`:
+If OpenCode displays a model id different from `deepseek/deepseek-v4-pro`, update this field in `opencode.jsonc`:
 
 ```jsonc
-"model": "deepseek/DeepSeek-V4-Pro"
+"model": "deepseek/deepseek-v4-pro"
 ```
 
 ## Expected State

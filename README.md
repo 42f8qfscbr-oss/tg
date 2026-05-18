@@ -22,7 +22,7 @@ Choose `deepseek`, enter your DeepSeek API key, then run:
 /models
 ```
 
-Select `DeepSeek-V4-Pro`. If the displayed model id differs from `deepseek/DeepSeek-V4-Pro`, update `opencode.jsonc`.
+Select `DeepSeek-V4-Pro`. If the displayed model id differs from `deepseek/deepseek-v4-pro`, update `opencode.jsonc`.
 
 Detailed connection notes are in `docs/deepseek-setup.md`.
 

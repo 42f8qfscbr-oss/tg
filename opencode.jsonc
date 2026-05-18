@@ -3,8 +3,8 @@
 
   // After running /connect -> deepseek, verify the exact model id with /models.
   // If OpenCode shows a different id for DeepSeek V4 Pro, replace this value.
-  "model": "deepseek/DeepSeek-V4-Pro",
-  "small_model": "deepseek/DeepSeek-V4-Pro",
+  "model": "deepseek/deepseek-v4-pro",
+  "small_model": "deepseek/deepseek-v4-pro",
 
   "provider": {
     // Local DeepSeek-V4-Pro served by vLLM/SGLang as an OpenAI-compatible API.
